@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELORA — curated international thrift fashion. Temukan fashion preloved unik dari seluruh dunia.">
+  <title>VELORA — International Thrift Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">♻️ SECOND LIFE, BETTER STYLE — curated thrift pieces from around the world</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Velora home"><span class="brand-mark">V</span><span>VELORA<span class="brand-dot">.</span><small>INTERNATIONAL THRIFT</small></span></a>
+    <form class="search" id="searchForm"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari jaket, knitwear, vintage..." aria-label="Cari produk"><button type="submit">Cari</button></form>
+    <nav class="header-actions">
+      <button class="icon-btn" id="sellerOpen" title="Seller Center">♧ <span>Seller</span></button>
+      <button class="icon-btn" id="loginOpen" title="Akun">♙ <span id="accountLabel">Masuk</span></button>
+      <button class="cart-btn" id="cartOpen">♡ <span>Keranjang</span><b id="cartCount">0</b></button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE GLOBAL THRIFT EDIT</p>
+        <h1>Find your next<br><em>forever piece.</em></h1>
+        <p class="hero-desc">Pilihan fashion preloved dari berbagai penjuru dunia. Lebih unik, lebih mindful, tetap jadi diri sendiri.</p>
+        <div class="hero-buttons"><a class="primary-btn" href="#shop">Jelajahi koleksi <span>↗</span></a><a class="text-link" href="#story">Kenapa thrift? <span>→</span></a></div>
+        <div class="hero-stats"><div><strong>1.2k+</strong><span>Unique finds</span></div><div><strong>40+</strong><span>Global sellers</span></div><div><strong>♻ 100%</strong><span>Preloved spirit</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image"></div><div class="image-tag tag-top">CURATED WITH CARE</div><div class="image-tag tag-bottom"><span>01 / 04</span> THE VINTAGE CLUB</div>
+        <div class="round-stamp"><span>PRELOVED</span><strong>✳</strong><span>NOT ORDINARY</span></div>
+      </div>
+    </section>
+    <section class="benefits">
+      <div><span class="benefit-icon">✦</span><span><strong>Curated finds</strong><small>Unik, bukan pasaran</small></span></div>
+      <div><span class="benefit-icon">♻</span><span><strong>Fashion circular</strong><small>Gaya yang lebih mindful</small></span></div>
+      <div><span class="benefit-icon">⌂</span><span><strong>Seller terpercaya</strong><small>Detail produk transparan</small></span></div>
+      <div><span class="benefit-icon">♡</span><span><strong>Made to be loved</strong><small>Temukan cerita baru</small></span></div>
+    </section>
+    <section class="shop-section" id="shop">
+      <div class="section-heading"><div><p class="eyebrow">THE GOOD FINDS</p><h2>Shop the <em>edit.</em></h2></div><a class="text-link" href="#shop" id="clearFilters">Lihat semua <span>→</span></a></div>
+      <div class="shop-controls"><div class="categories" id="categoryButtons">
+        <button class="category active" data-category="All">All pieces <span>08</span></button><button class="category" data-category="Outerwear">Outerwear</button><button class="category" data-category="Tops">Tops</button><button class="category" data-category="Knitwear">Knitwear</button><button class="category" data-category="Accessories">Accessories</button>
+      </div><select id="sortSelect" aria-label="Urutkan produk"><option value="featured">Featured</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+    <section class="story-section" id="story"><div class="story-image"></div><div class="story-copy"><p class="eyebrow">A LITTLE MORE MEANING</p><h2>Good style.<br><em>Better story.</em></h2><p>Setiap pakaian punya cerita. Dengan memilih preloved, kamu memberi kesempatan kedua pada barang berkualitas dan menemukan gaya yang benar-benar personal.</p><div class="story-points"><span>01 <b>Less waste, more wear</b></span><span>02 <b>One-of-a-kind pieces</b></span><span>03 <b>Support independent sellers</b></span></div><button class="outline-btn" id="sellerStory">Jual barangmu di Velora ↗</button></div></section>
+    <section class="newsletter"><div><p class="eyebrow">THE VELORA LETTER</p><h2>Good finds, straight to you.</h2><p>Dapatkan update koleksi vintage terbaru.</p></div><form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Alamat email kamu" required><button class="primary-btn">Join the list ↗</button></form></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">V</span><span>VELORA<span class="brand-dot">.</span><small>INTERNATIONAL THRIFT</small></span></a><p>Preloved pieces. New stories.</p><span>© 2026 VELORA. Demo storefront.</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Keranjang belanja"><div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Keranjang <span id="drawerCount">(0)</span></h2></div><button class="close-btn" data-close>×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-bottom"><div class="subtotal"><span>Subtotal</span><strong id="subtotal">Rp0</strong></div><small>Ongkir dihitung pada tahap checkout.</small><button class="primary-btn full-btn" id="checkoutOpen">Lanjut checkout ↗</button></div></aside>
+
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle"><button class="close-btn modal-close" data-close>×</button><p class="eyebrow">WELCOME TO VELORA</p><h2 id="loginTitle">Your account,<br><em>your finds.</em></h2><div class="role-tabs"><button class="role-tab active" data-role="buyer">Pembeli</button><button class="role-tab" data-role="seller">Seller</button></div><form id="loginForm" class="modal-form"><label>Nama lengkap<input id="loginName" required placeholder="Nama kamu"></label><label>Email<input id="loginEmail" type="email" required placeholder="nama@email.com"></label><label>Password<input id="loginPassword" type="password" minlength="4" required placeholder="Minimal 4 karakter"></label><button class="primary-btn full-btn">Masuk / Daftar ↗</button></form><p class="modal-note">Demo front-end: akun hanya tersimpan di browser ini. Belum ada autentikasi server.</p></div>
+
+  <div class="modal seller-modal" id="sellerModal" role="dialog" aria-modal="true" aria-labelledby="sellerTitle"><button class="close-btn modal-close" data-close>×</button><p class="eyebrow">SELLER STUDIO</p><h2 id="sellerTitle">Put your pieces<br><em>out there.</em></h2><p class="modal-intro">Buat listing thrift dan tampilkan koleksimu di etalase Velora.</p><div id="sellerWelcome" class="seller-welcome hidden"></div><form id="sellerForm" class="modal-form"><label>Nama produk<input id="newProductName" required placeholder="Contoh: Vintage Denim Jacket"></label><div class="form-row"><label>Kategori<select id="newProductCategory"><option>Outerwear</option><option>Tops</option><option>Knitwear</option><option>Accessories</option></select></label><label>Harga (Rp)<input id="newProductPrice" type="number" min="1000" required placeholder="185000"></label></div><label>URL foto produk<input id="newProductImage" type="url" placeholder="https://... (opsional)"></label><label>Deskripsi singkat<textarea id="newProductDesc" rows="2" placeholder="Kondisi, ukuran, asal..."></textarea></label><button class="primary-btn full-btn">Terbitkan listing ↗</button></form><p class="modal-note">Listing demo disimpan di browser, bukan dipublikasikan ke server.</p></div>
+
+  <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"><button class="close-btn modal-close" data-close>×</button><p class="eyebrow">ALMOST YOURS</p><h2 id="checkoutTitle">Checkout <em>details.</em></h2><form id="checkoutForm" class="modal-form"><label>Nama penerima<input id="shippingName" required placeholder="Nama lengkap"></label><label>Nomor telepon<input id="shippingPhone" required inputmode="tel" placeholder="08xxxxxxxxxx"></label><label>Alamat lengkap<textarea id="shippingAddress" required rows="3" placeholder="Jalan, nomor rumah, kecamatan, kota, kode pos"></textarea></label><div class="form-row"><label>Metode pengiriman<select id="shippingMethod"><option value="18000">Reguler — Rp18.000</option><option value="30000">Express — Rp30.000</option></select></label><label>Pembayaran<select id="paymentMethod"><option>Transfer bank (demo)</option><option>COD (demo)</option><option>E-wallet (demo)</option></select></label></div><div class="checkout-total"><span>Total pembayaran</span><strong id="checkoutTotal">Rp0</strong></div><button class="primary-btn full-btn">Buat pesanan demo ↗</button></form><p class="modal-note">Tidak ada uang yang ditarik. Pembayaran dan pesanan hanya simulasi.</p></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
