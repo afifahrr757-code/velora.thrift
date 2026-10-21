@@ -60,3 +60,43 @@ $("#checkoutForm").addEventListener("submit",e=>{e.preventDefault();if(!cartCoun
 $("#newsletterForm").addEventListener("submit",e=>{e.preventDefault();toast("Terima kasih! Ini demo, email belum dikirim ke server.");e.target.reset()});
 $("#overlay").addEventListener("click",closePanels);$$("[data-close]").forEach(b=>b.addEventListener("click",closePanels));document.addEventListener("keydown",e=>{if(e.key==="Escape")closePanels()});
 renderProducts();updateCartBadge();updateUserUI();
+/* ===== CHECKOUT VIA WHATSAPP ===== */
+
+// Ganti dengan nomor WhatsApp tokomu
+const STORE_WA = "6281234567890";
+
+function checkoutViaWhatsApp(items) {
+  if (!items || items.length === 0) {
+    alert("Keranjang kamu masih kosong!");
+    return;
+  }
+
+  let total = 0;
+
+  const detailProduk = items.map((item, index) => {
+    const nama = item.name || item.title;
+    const harga = Number(
+      String(item.price).replace(/[^\d]/g, "")
+    ) || 0;
+    const jumlah = Number(item.quantity ?? item.qty ?? 1);
+    const subtotal = harga * jumlah;
+
+    total += subtotal;
+
+    return `${index + 1}. ${nama}
+   ${jumlah} x Rp${harga.toLocaleString("id-ID")}
+   Subtotal: Rp${subtotal.toLocaleString("id-ID")}`;
+  }).join("\n\n");
+
+  const pesan = `Halo, saya ingin memesan produk berikut:
+
+${detailProduk}
+
+TOTAL: Rp${total.toLocaleString("id-ID")}
+
+Mohon konfirmasi pesanan saya. Terima kasih!`;
+
+  const url = `https://wa.me/${STORE_WA}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
+}
